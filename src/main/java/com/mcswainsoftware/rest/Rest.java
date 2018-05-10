@@ -83,9 +83,7 @@ public class Rest {
                 String urlString = "";
                 for (HashMap.Entry<String, String> param : req.getArguments().entrySet()) {
                     if (urlString.length() != 0) urlString += '&';
-                    urlString += URLEncoder.encode(param.getKey(), "UTF-8");
-                    urlString += '=';
-                    urlString += URLEncoder.encode(param.getValue(), "UTF-8");
+                    urlString += param.getKey() + '=' + param.getValue();
                 }
                 baseUrlString += urlString;
 
